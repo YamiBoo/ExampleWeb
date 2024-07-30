@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videojuego Neón</title>
+    <style>
+        /* Estilos básicos para un fondo neón */
+        body {
+            background-color: #000;
+            color: #0f0;
+        }
+        /* Estilos para elementos del juego */
+        .jugador {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #0ff;
+            border-radius: 50%;
+        }
+        .enemigo {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #f00;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="jugador" id="jugador"></div>
+    <div class="enemigo" id="enemigo"></div>
+
+    <script>
+        // Script básico para mover al jugador con las flechas del teclado
+        document.addEventListener("keydown", function(event) {
+            var jugador = document.getElementById("jugador");
+            switch (event.key) {
+                case "ArrowUp":
+                    jugador.style.top = (jugador.offsetTop - 10) + "px";
+                    break;
+                case "ArrowDown":
+                    jugador.style.top = (jugador.offsetTop + 10) + "px";
+                    break;
+                case "ArrowLeft":
+                    jugador.style.left = (jugador.offsetLeft - 10) + "px";
+                    break;
+                case "ArrowRight":
+                    jugador.style.left = (jugador.offsetLeft + 10) + "px";
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
